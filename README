@@ -1,0 +1,6 @@
+To run this application
+
+1. set environment variables
+IGNORE_CASE_SENSITIVE=1
+
+2.execute command: run --package mygrep --bin mygrep to test.txt
