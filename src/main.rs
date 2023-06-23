@@ -1,13 +1,19 @@
 use std::env;
+use std::fs;
 
 fn main() {
 
     let args: Vec<String> = env::args().collect();
 
-    let _args = args.clone();
+    let (query, path) = parse_config(&args);
 
-    //dbg!(args);
+    fs::read_to_string(path).expect("the file does not exist!!!");
 
-    println!("{}", &_args[1]);
-    println!("{}", &_args[2]);
+}
+
+fn parse_config(args: &[String]) -> (&str, &str){
+    let query = &args[1];
+    let path = &args[2];
+
+    (query, path)
 }
